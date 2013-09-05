@@ -56,5 +56,5 @@ eazy_rutorrent
 
 2.	Login with your rutorrent *username* and *password*.
 
-3	 There you have it, a complete rutorrent seedbox.
+3	There you have it, a complete rutorrent seedbox.
 	
