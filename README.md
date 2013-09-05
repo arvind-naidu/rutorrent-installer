@@ -32,29 +32,29 @@ eazy_rutorrent
 
 **Other OS**
 		
-	1) Login as root	
+	1. Login as root	
 		su
 
-	2) Update OS
+	2. Update OS
 		yum update
 
-	3) Install irssi & git
+	3. Install irssi & git
 		yum install irssi && git
 
-	4) Clone eazy_rutorrent repo
+	4. Clone eazy_rutorrent repo
 		git clone https://github.com/arvind-naidu/eazy_rutorrent.git
 
-	5) Change directory to eazy_rutorrent
+	5. Change directory to eazy_rutorrent
 		cd eazy_rutorrent
 
-	6) Install rutorrent
+	6. Install rutorrent
 		sudo sh rutorrent_setup
 
 ##What to do after installation?##
 
-1)	Log on to your seedbox by opening up your browser and typing in `http://ip-address/rutorrent`.
+1.	Log on to your seedbox by opening up your browser and typing in `http://ip-address/rutorrent`.
 
-2)	Login with your rutorrent *username* and *password*.
+2.	Login with your rutorrent *username* and *password*.
 
-3) There you have it, a complete rutorrent seedbox.
+3	 There you have it, a complete rutorrent seedbox.
 	
