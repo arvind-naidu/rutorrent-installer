@@ -58,3 +58,7 @@ eazy_rutorrent
 
 3.	There you have it, a complete rutorrent seedbox.
 	
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arvind-naidu/eazy-rutorrent/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
