@@ -24,11 +24,11 @@
 # ***** END LICENSE BLOCK *****
 
 AUTODL_IRSSI_ZIP_URL="http://sourceforge.net/projects/autodl-irssi/files/autodl-irssi-v1.31.zip/download"
-SVN_PATH_RUTORRENT_PLUGIN="https://github.com/asriznet/autodl-irssi"
+SVN_PATH_RUTORRENT_PLUGIN="https://github.com/asriznet/autodl-irssi/"
 
 WEBMIN_URL="http://www.webmin.com/download/webmin-current.tar.gz"
 
-RUTORRENT_TRUNK_DIR="https://github.com/Novik/ruTorrent"
+RUTORRENT_TRUNK_DIR="https://rutorrent.googlecode.com/svn/trunk"
 
 # The official tarballs are tried if subversion fails.
 RUTORRENT_VERSION="3.6"
