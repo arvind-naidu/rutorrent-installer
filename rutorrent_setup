@@ -24,18 +24,18 @@
 # ***** END LICENSE BLOCK *****
 
 AUTODL_IRSSI_ZIP_URL="http://sourceforge.net/projects/autodl-irssi/files/autodl-irssi-v1.31.zip/download"
-SVN_PATH_RUTORRENT_PLUGIN="https://svn.code.sf.net/p/autodl-irssi/code/trunk/rutorrent/autodl-irssi/"
+SVN_PATH_RUTORRENT_PLUGIN="https://github.com/asriznet/autodl-irssi"
 
 WEBMIN_URL="http://www.webmin.com/download/webmin-current.tar.gz"
 
-RUTORRENT_TRUNK_DIR="https://rutorrent.googlecode.com/svn/trunk"
+RUTORRENT_TRUNK_DIR="https://github.com/Novik/ruTorrent"
 
 # The official tarballs are tried if subversion fails.
-RUTORRENT_VERSION="3.3"
+RUTORRENT_VERSION="3.6"
 RUTORRENT_CORE_NAME="rutorrent-$RUTORRENT_VERSION.tar.gz"
-RUTORRENT_CORE_URL="http://rutorrent.googlecode.com/files/$RUTORRENT_CORE_NAME"
+RUTORRENT_CORE_URL="https://bintray.com/artifact/download/novik65/generic/$RUTORRENT_CORE_NAME"
 RUTORRENT_PLUGINS_NAME="plugins-$RUTORRENT_VERSION.tar.gz"
-RUTORRENT_PLUGINS_URL="http://rutorrent.googlecode.com/files/$RUTORRENT_PLUGINS_NAME"
+RUTORRENT_PLUGINS_URL="https://bintray.com/artifact/download/novik65/generic/$RUTORRENT_PLUGINS_NAME"
 RUTORRENT_CORE_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$RUTORRENT_CORE_NAME/download"
 RUTORRENT_PLUGINS_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$RUTORRENT_PLUGINS_NAME/download"
 
@@ -45,6 +45,7 @@ RUTORRENT_PLUGINS=
 # remove the whole line or comment it (prepend a '#' to the start of the line).
 # If the line starts with '#', the plugin is not installed.
 RUTORRENT_PLUGINS="$RUTORRENT_PLUGINS _getdir"
+RUTORRENT_PLUGINS="$RUTORRENT_PLUGINS _task"
 RUTORRENT_PLUGINS="$RUTORRENT_PLUGINS autotools"
 RUTORRENT_PLUGINS="$RUTORRENT_PLUGINS chunks"
 RUTORRENT_PLUGINS="$RUTORRENT_PLUGINS cookies"
@@ -78,16 +79,16 @@ RUTORRENT_PLUGINS="$RUTORRENT_PLUGINS trafic"
 RUTORRENT_PLUGINS="$RUTORRENT_PLUGINS unpack"
 
 # For building rtorrent
-LIBCURL_NAME="curl-7.21.3"
+LIBCURL_NAME="curl-7.41.0"
 LIBCURL_URL="http://curl.haxx.se/download/$LIBCURL_NAME.tar.gz"
-SIGCPP20_NAME="libsigc++-2.2.8"
+SIGCPP20_NAME="libsigc++-2.2.11"
 SIGCPP20_URL="http://ftp.gnome.org/pub/GNOME/sources/libsigc++/2.2/$SIGCPP20_NAME.tar.gz"
 XMLRPC_SVN_DIR="http://svn.code.sf.net/p/xmlrpc-c/code/stable"
-LIBTORRENT_VERSION="0.12.9"
+LIBTORRENT_VERSION="0.13.4"
 LIBTORRENT_NAME="libtorrent-$LIBTORRENT_VERSION"
 LIBTORRENT_URL="http://libtorrent.rakshasa.no/downloads/$LIBTORRENT_NAME.tar.gz"
 LIBTORRENT_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$LIBTORRENT_NAME.tar.gz/download"
-RTORRENT_VERSION="0.8.9"
+RTORRENT_VERSION="0.9.4"
 RTORRENT_NAME="rtorrent-$RTORRENT_VERSION"
 RTORRENT_URL="http://libtorrent.rakshasa.no/downloads/$RTORRENT_NAME.tar.gz"
 RTORRENT_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$RTORRENT_NAME.tar.gz/download"
@@ -95,10 +96,10 @@ RTORRENT_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$RT
 HTPASSWD_PY_SCRIPT_URL="http://trac.edgewall.org/export/10433/trunk/contrib/htpasswd.py"
 HTPASSWD_PY_SCRIPT_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/htpasswd.py/download"
 
-NGINX_NAME="nginx-1.0.5"
+NGINX_NAME="nginx-1.7.9"
 NGINX_URL="http://nginx.org/download/$NGINX_NAME.tar.gz"
 
-LIGHTTPD_NAME="lighttpd-1.4.29"
+LIGHTTPD_NAME="lighttpd-1.4.35"
 LIGHTTPD_URL="http://download.lighttpd.net/lighttpd/releases-1.4.x/$LIGHTTPD_NAME.tar.gz"
 
 MOD_SCGI_VERSION="1.14"
@@ -153,7 +154,7 @@ USE_ENCRYPTED_FTP=n
 INSTALL_WEBMIN=n
 USER_TIMEZONE=
 
-RUTORRENT_SITE_REALM="My ruTorrent web site"
+RUTORRENT_SITE_REALM="MrAZ ruTorrent Portal"
 AUTODL_STARTUP_DESC="Start autodl-irssi and rtorrent"
 PHPCGI_STARTUP_DESC="Start php-cgi"
 NGINX_STARTUP_DESC="Start nginx"
@@ -1888,6 +1889,8 @@ updateVsftpdConf() {
 		setVsftpdValue2 "$confFile" strict_ssl_read_eof NO
 		setVsftpdValue2 "$confFile" strict_ssl_write_shutdown NO
 		setVsftpdValue2 "$confFile" validate_cert NO
+		
+		setVsftpdValue2 "$confFile" ssl_ciphers HIGH
 	else
 		FTP_SERVER_TYPE="FTP - Non-encrypted"
 		FTP_PORT=${FTP_PORT:-$DEFAULT_PORT_FTP}
@@ -5304,19 +5307,6 @@ guessed the IP address below. Make sure it's correct.$CEND
 	${CGREEN}FTP port$CEND: ${CMAGENTA}$FTP_PORT$CEND
 	${CGREEN}FTP server type$CEND: $CMAGENTA$FTP_SERVER_TYPE$CEND
 EOF
-fi
-
-if [ -n "$RUTORRENT_BASE_PATH" ] && [ "$INSTALL_AUTODL_IRSSI" = y ]; then
-	RTORRENT_VERSION=$(sed -n -e "s/^[ 	]*version:[^\"']*['\"]\\([0-9]\.[0-9]\\)['\"].*/\\1/p" $RUTORRENT_BASE_PATH/js/webui.js)
-	major=$(echo $RTORRENT_VERSION | cut -d. -f1)
-	minor=$(echo $RTORRENT_VERSION | cut -d. -f2)
-	if [ $major -lt 3 ] || [ $minor -lt 2 ]; then
-		cat << EOF
-$CWARNING
-You're using an old version of ruTorrent. I detected version $RTORRENT_VERSION.
-You need at least version 3.2 for the autodl-irssi plugin to work correctly.$CEND
-EOF
-	fi
 fi
 
 if [ "$INSTALL_WEBMIN" = y ]; then
