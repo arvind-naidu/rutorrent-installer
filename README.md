@@ -45,10 +45,10 @@ rutorrent-installer
 	3. Install irssi & git
 		yum install irssi && git
 
-	4. Clone eazy_rutorrent repo
+	4. Clone repo
 		git clone https://github.com/asriznet/rutorrent-installer.git
 
-	5. Change directory to eazy_rutorrent
+	5. Change directory
 		cd rutorrent-installer
 
 	6. Install rutorrent
@@ -60,7 +60,9 @@ rutorrent-installer
 
 2.	Login with your rutorrent *username* and *password*.
 
-3.	There you have it, a complete rutorrent seedbox.
+2.	Login to FTP with ftpes://ServerIP with *username* and *password*.
+
+3.	There you have it, a complete rutorrent seedbox with FTP access.
 
 ##Updates##
 
@@ -74,7 +76,17 @@ rutorrent-installer
 		rtorrent(0.9.4)
 		nginx(1.7.9)
 		lighttpd(1.4.35)
-	- included "ssl_ciphers=HIGH" in vsftpd conf for SSL
-	- fix error on line 5315: rutorrent_setup: 5315: [: -lt: unexpected operator
+	- included "ssl_ciphers=HIGH" in vsftpd conf file to fix connection error
+	- fixed error on line 5315: rutorrent_setup: 5315: [: -lt: unexpected operator
+	- fixed missing rutorrent plugin: _task
 		
+##Notes##
+If you're not able to connect to FTP server with Login incorrect error, please reset your user password with below command.
 
+	# sudo passwd <<USERNAME>>
+	Enter new UNIX password: 
+	Retype new UNIX password: 
+	passwd: password updated successfully
+
+	- Replace <<USERNAME>> with the username you created while installing the script.
+	-  Password field will be left empty even after password is typed, just keep typing and hit enter when done typing.

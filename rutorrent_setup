@@ -154,7 +154,7 @@ USE_ENCRYPTED_FTP=n
 INSTALL_WEBMIN=n
 USER_TIMEZONE=
 
-RUTORRENT_SITE_REALM="MrAZ ruTorrent Portal"
+RUTORRENT_SITE_REALM="My ruTorrent web site"
 AUTODL_STARTUP_DESC="Start autodl-irssi and rtorrent"
 PHPCGI_STARTUP_DESC="Start php-cgi"
 NGINX_STARTUP_DESC="Start nginx"
