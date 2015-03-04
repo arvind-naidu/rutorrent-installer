@@ -1,25 +1,37 @@
 rutorrent-installer
 ===================
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arvind-naidu/eazy-rutorrent/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
 >	Easiest rutorrent & rtorrent installer + Web server, FTP, Webmin (Ubuntu/Debian/Fedora/More)
 
 ##Updated script based on: https://github.com/arvind-naidu/rutorrent-installer##
 
-##Benefits of using eazy_rutorrent##
+	- Updated ruTorrent Version => 3.6 and Repo as rutorrent moved to Bintray
+	- Updated autodl-irssi plugin & repo to fix error:
+		Error downloading files. Make sure autodl-irssi is started and configured properly (eg. password, port number): AutodlFilesDownloader.downloadAllFiles: Exception info: name = TypeError; message = Cannot read property 'msie' of undefined;
+	- Updated dependencies:
+		libcurl(7.41.0)
+		libsigc++(2.2.11)
+		libtorrent(0.13.4)
+		rtorrent(0.9.4)
+		nginx(1.7.9)
+		lighttpd(1.4.35)
+	- included "ssl_ciphers=HIGH" in vsftpd conf file to fix SSL connection error
+	- removed version check on line 5315 to fix error: rutorrent_setup: 5315: [: -lt: unexpected operator
+	- fixed missing rutorrent plugin: _task
 
--	Eazy and **always updated ruTorrent plugins, URL & SVN packages**.
+##Benefits##
+
+-	Easy to install.
 -	Turns an hour or two into a *5-10 minute task* to install rutorrent.
 -	**No Linux knowlegde required**.
 -	To install rutorrent, only **four - six** simple lines of code is needed. 
 
-##What eazy_rutorrent installs?##
+##What it installs?##
 
 -	Installs preferred web server `Apache, Nginx or Lightpd`
 -	Installs rutorrent with multi-user support `HTTP & HTTPS`
 -	Installs 1st party ruTorrent plugins 
--	Installs an encrypted FTP server `VSFTP : port = 900`
+-	Installs an encrypted FTP server `VSFTP : port = 990`
 -	Installs rtorrent with xmlrpc-c support
 -	Installs the IRC auto downloader plugin `autodl-irssi`
 -	Installs Webmin `Custom user, password, port & SSL`
@@ -54,34 +66,9 @@ rutorrent-installer
 	6. Install rutorrent
 		sudo sh rutorrent_setup
 
-##What to do after installation?##
-
-1.	Log on to your seedbox by opening up your browser and typing in `http://ip-address/rutorrent`.
-
-2.	Login with your rutorrent *username* and *password*.
-
-2.	Login to FTP with ftpes://ServerIP with *username* and *password*.
-
-3.	There you have it, a complete rutorrent seedbox with FTP access.
-
-##Updates##
-
-	- Updated ruTorrent Version => 3.6 and Repo as rutorrent moved to Bintray
-	- Updated autodl-irssi plugin  to fix error:
-		Error downloading files. Make sure autodl-irssi is started and configured properly (eg. password, port number): AutodlFilesDownloader.downloadAllFiles: Exception info: name = TypeError; message = Cannot read property 'msie' of undefined;
-	- Updated dependencies:
-		libcurl(7.41.0)
-		libsigc++(2.2.11)
-		libtorrent(0.13.4)
-		rtorrent(0.9.4)
-		nginx(1.7.9)
-		lighttpd(1.4.35)
-	- included "ssl_ciphers=HIGH" in vsftpd conf file to fix connection error
-	- fixed error on line 5315: rutorrent_setup: 5315: [: -lt: unexpected operator
-	- fixed missing rutorrent plugin: _task
 		
 ##Notes##
-If you're not able to connect to FTP server with Login incorrect error, please reset your user password with below command.
+If you're not able to connect to FTP server with Login incorrect error after installation, please reset your user password with below command - you can reset to the same password you set during installation.
 
 	# sudo passwd <<USERNAME>>
 	Enter new UNIX password: 
@@ -89,4 +76,4 @@ If you're not able to connect to FTP server with Login incorrect error, please r
 	passwd: password updated successfully
 
 	- Replace <<USERNAME>> with the username you created while installing the script.
-	-  Password field will be left empty even after password is typed, just keep typing and hit enter when done typing.
+	Take note that the password field remains empty even after password is typed, just keep typing and hit enter when done typing.
