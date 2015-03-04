@@ -5,16 +5,16 @@ rutorrent-installer
 
 ##Updated script based on: https://github.com/arvind-naidu/rutorrent-installer##
 
-	- Updated ruTorrent Version => 3.6 and Repo as rutorrent moved to Bintray
+	- Updated ruTorrent Version 3.3 => 3.6 and Repo as rutorrent moved to Bintray
 	- Updated autodl-irssi plugin & repo to fix error:
 		Error downloading files. Make sure autodl-irssi is started and configured properly (eg. password, port number): AutodlFilesDownloader.downloadAllFiles: Exception info: name = TypeError; message = Cannot read property 'msie' of undefined;
 	- Updated dependencies:
-		libcurl(7.41.0)
-		libsigc++(2.2.11)
-		libtorrent(0.13.4)
-		rtorrent(0.9.4)
-		nginx(1.7.9)
-		lighttpd(1.4.35)
+		libcurl: 7.21.3 => 7.41.0
+		libsigc++: 2.2.8 => 2.2.11
+		libtorrent: 0.12.9 => 0.13.4
+		rtorrent: 0.8.9 => 0.9.4
+		nginx: 1.0.5 => 1.7.9
+		lighttpd: 1.4.29 => 1.4.35
 	- included "ssl_ciphers=HIGH" in vsftpd conf file to fix SSL connection error
 	- removed version check on line 5315 to fix error: rutorrent_setup: 5315: [: -lt: unexpected operator
 	- fixed missing rutorrent plugin: _task
