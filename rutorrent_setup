@@ -5031,7 +5031,7 @@ EOF
 	cd $tmpName
 	RUTORRENT_BASE_PATH="$WWW_ROOT/$RUTORRENT_DIRNAME"
 	initPluginDirVar
-	mv rutorrent/ "$RUTORRENT_BASE_PATH"
+	mv ruTorrent-master/ "$RUTORRENT_BASE_PATH"
 	mkdir -p "$RUTORRENT_BASE_PATH/plugins"
 	for plugin in $RUTORRENT_PLUGINS; do
 		if [ -d "plugins/$plugin/" ]; then
