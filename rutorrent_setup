@@ -87,11 +87,11 @@ SIGCPP20_URL="http://ftp.gnome.org/pub/GNOME/sources/libsigc++/2.2/$SIGCPP20_NAM
 XMLRPC_SVN_DIR="http://svn.code.sf.net/p/xmlrpc-c/code/stable"
 LIBTORRENT_VERSION="0.13.4"
 LIBTORRENT_NAME="libtorrent-$LIBTORRENT_VERSION"
-LIBTORRENT_URL="https://github.com/rakshasa/libtorrent/archive/$LIBTORRENT_NAME.tar.gz"
+LIBTORRENT_URL="https://github.com/rakshasa/libtorrent/archive/$LIBTORRENT_VERSION.tar.gz"
 LIBTORRENT_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$LIBTORRENT_NAME.tar.gz/download"
 RTORRENT_VERSION="0.9.4"
 RTORRENT_NAME="rtorrent-$RTORRENT_VERSION"
-RTORRENT_URL="https://github.com/rakshasa/rtorrent/archive/$RTORRENT_NAME.tar.gz"
+RTORRENT_URL="https://github.com/rakshasa/rtorrent/archive/$RTORRENT_VERSION.tar.gz"
 RTORRENT_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$RTORRENT_NAME.tar.gz/download"
 
 HTPASSWD_PY_SCRIPT_URL="http://trac.edgewall.org/export/10433/trunk/contrib/htpasswd.py"
