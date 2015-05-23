@@ -713,6 +713,7 @@ buildProgram() {
 
 	echo "${CMSG}Building $prog...$CEND"
 
+	./autogen.sh
 	./configure --prefix=$PREFIX $2 || errorExit "Could not configure $prog. Try again, or try logging out and in and try again."
 
 	getNumCpus
