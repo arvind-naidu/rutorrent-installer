@@ -28,7 +28,7 @@ SVN_PATH_RUTORRENT_PLUGIN="https://github.com/asriznet/autodl-irssi/"
 
 WEBMIN_URL="http://www.webmin.com/download/webmin-current.tar.gz"
 
-RUTORRENT_TRUNK_DIR="https://github.com/Novik/ruTorrent/"
+#RUTORRENT_TRUNK_DIR="https://github.com/Novik/ruTorrent"
 
 # The official tarballs are tried if subversion fails.
 RUTORRENT_VERSION="3.7"
