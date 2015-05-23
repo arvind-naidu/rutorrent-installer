@@ -2451,7 +2451,7 @@ osHandler_debian() {
 	case $1 in
 		init)
 			INSTALL="apt-get -y install"
-			FEATURES="service rtorrent apache nginx lighttpd vsftpd webmin"
+			FEATURES="service rtorrent apache nginx lighttpd vsftpd webmin ffmpeg mediainfo"
 			BUILD_TOOLS="build-essential automake file pkg-config libtool m4 libcppunit-dev"
 			;;
 		init2)
@@ -2797,7 +2797,7 @@ osHandler_pclinuxos() {
 	case $1 in
 		init)
 			INSTALL="apt-get -y install"
-			FEATURES="service rtorrent apache nginx lighttpd vsftpd webmin"
+			FEATURES="service rtorrent apache nginx lighttpd vsftpd webmin ffmpeg mediainfo"
 			BUILD_TOOLS="gcc gcc-c++ make pkgconfig file libtool m4"
 			;;
 		init2)
@@ -4254,7 +4254,7 @@ osHandler_slaptget() {
 	case $1 in
 		init)
 			INSTALL="slapt-get -y --install"
-			FEATURES="rtorrent webmin"
+			FEATURES="rtorrent webmin ffmpeg mediainfo"
 			BUILD_TOOLS="gcc gcc-g++ make kernel-headers pkg-config file libtool"
 			;;
 		init2)
