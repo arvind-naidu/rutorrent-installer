@@ -2451,7 +2451,7 @@ osHandler_debian() {
 		init)
 			INSTALL="apt-get -y install"
 			FEATURES="service rtorrent apache nginx lighttpd vsftpd webmin"
-			BUILD_TOOLS="build-essential make file pkg-config libtool m4"
+			BUILD_TOOLS="build-essential automake make file pkg-config libtool m4"
 			;;
 		init2)
 			apt-get update
