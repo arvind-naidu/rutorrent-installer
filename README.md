@@ -4,7 +4,7 @@ rutorrent-installer
 >	Easiest rutorrent & rtorrent installer + Web server, FTP, Webmin (Ubuntu/Debian/Fedora/More)
 
 ##Updated script based on: https://github.com/arvind-naidu/rutorrent-installer##
-
+	- Updated ruTorrent Version 3.6 => 3.7
 	- Updated ruTorrent Version 3.3 => 3.6 and Repo as rutorrent moved to Bintray
 	- Updated autodl-irssi plugin & repo to fix error:
 		Error downloading files. Make sure autodl-irssi is started and configured properly (eg. password, port number): AutodlFilesDownloader.downloadAllFiles: Exception info: name = TypeError; message = Cannot read property 'msie' of undefined;
@@ -41,7 +41,7 @@ rutorrent-installer
 
 **Ubuntu & Ubuntu Clones**
 
-		sudo apt-get install irssi && git
+		sudo apt-get install irssi git
 		git clone https://github.com/asriznet/rutorrent-installer.git
 		cd rutorrent-installer
 		sudo sh rutorrent_setup
@@ -55,7 +55,7 @@ rutorrent-installer
 		yum update
 
 	3. Install irssi & git
-		yum install irssi && git
+		yum install irssi git
 
 	4. Clone repo
 		git clone https://github.com/asriznet/rutorrent-installer.git
