@@ -4719,7 +4719,7 @@ EOF
 		echo ""
 		while true; do
 			echo "${CQUESTION}The ruTorrent www base path is where you installed ruTorrent.$CEND"
-			askQuestion "What is the ruTorrent www base path, eg. /var/www/rutorrent:" ""
+			askQuestion "What is the ruTorrent www base path, eg. /var/www/rutorrent:" "/var/www/rutorrent"
 			RUTORRENT_BASE_PATH="$answer"
 			isValidRutorrentBasePath "$RUTORRENT_BASE_PATH" && break
 
