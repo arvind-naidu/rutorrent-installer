@@ -40,8 +40,6 @@ RUTORRENT_PLUGINS_URL="https://bintray.com/artifact/download/novik65/generic/$RU
 #RUTORRENT_CORE_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$RUTORRENT_CORE_NAME/download"
 #RUTORRENT_PLUGINS_URL2="http://sourceforge.net/projects/autodl-irssi/files/inst-files/$RUTORRENT_PLUGINS_NAME/download"
 
-RUTORRENT_PLUGINS=
-
 # These are the ruTorrent plugins that will get installed. To remove one, either
 # remove the whole line or comment it (prepend a '#' to the start of the line).
 # If the line starts with '#', the plugin is not installed.
