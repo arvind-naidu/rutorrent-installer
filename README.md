@@ -10,12 +10,12 @@ rutorrent-installer
 	- Updated autodl-irssi plugin & repo to fix error:
 		Error downloading files. Make sure autodl-irssi is started and configured properly (eg. password, port number): AutodlFilesDownloader.downloadAllFiles: Exception info: name = TypeError; message = Cannot read property 'msie' of undefined;
 	- Updated dependencies:
-		libcurl: 7.21.3 => 7.49.1
+		libcurl: 7.21.3 => 7.51.0
 		libsigc++: 2.2.8 => 2.2.11
 		libtorrent: 0.12.9 => 0.13.6
 		rtorrent: 0.8.9 => 0.9.6
 		nginx: 1.0.5 => 1.9.9
-		lighttpd: 1.4.29 => 1.4.39
+		lighttpd: 1.4.29 => 1.4.43
 	- included "ssl_ciphers=HIGH" in vsftpd conf file to fix SSL connection error
 	- removed version check on line 5315 to fix error: rutorrent_setup: 5315: [: -lt: unexpected operator
 	- fixed missing rutorrent plugin: _task
